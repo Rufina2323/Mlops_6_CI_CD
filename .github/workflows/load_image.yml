@@ -23,8 +23,8 @@ jobs:
 
       - name: Install MinIO client
         run: |
-          apt-get update
-          apt install curl -y
+          sudo apt-get update
+          sudo apt install curl -y
           curl https://dl.min.io/client/mc/release/linux-amd64/mc --create-dirs -o $HOME/minio-binaries/mc
           chmod +x $HOME/minio-binaries/mc
           export PATH=$PATH:$HOME/minio-binaries/
