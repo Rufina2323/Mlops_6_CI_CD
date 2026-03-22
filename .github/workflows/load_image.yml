@@ -40,9 +40,7 @@ jobs:
       - name: Verify file exists
         run: |
           ls -l $LOCAL_PATH
-
+          
       - name: Check MD5 hash
         run: |
-          HASH_STRING_CLEAN=$(echo $HASH_STRING | tr -d '\r')
-          echo "${HASH_STRING_CLEAN}  ${LOCAL_PATH}" > checksum.md5
-          md5sum -c checksum.md5
+          echo "$HASH_STRING $LOCAL_PATH" | md5sum -c -
