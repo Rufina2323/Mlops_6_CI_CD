@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Print greeting
         run: |
-          echo "Hello! My name is $MY_LOGIN. My password is $MY_PASSWORD."
+          echo "Hello! My name is ${{ vars.MY_LOGIN }}. My password is ${{ secrets.MY_PASSWORD }}."
 
   lint:
     runs-on: ubuntu-latest
