@@ -3,7 +3,7 @@ name: Load Image from MinIO
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 env:
   MINIO_URL: ${{ secrets.MINIO_URL }}
