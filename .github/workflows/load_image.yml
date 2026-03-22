@@ -37,6 +37,10 @@ jobs:
         run: |
           $HOME/minio-binaries/mc cp myminio/$BUCKET_NAME/$FILE_PATH $LOCAL_PATH
 
+      - name: Verify file exists
+        run: |
+          ls -l $LOCAL_PATH
+          
       - name: Check MD5 hash
         run: |
           echo "$HASH_STRING  $LOCAL_PATH" | md5sum -c -
