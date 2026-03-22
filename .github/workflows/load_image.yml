@@ -44,3 +44,7 @@ jobs:
       - name: Show MD5 hash of the file
         run: |
           md5sum $LOCAL_PATH
+      
+      - name: Check MD5 hash
+        run: |
+          echo "$HASH_STRING  $LOCAL_PATH" | md5sum -c -
