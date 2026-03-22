@@ -31,11 +31,11 @@ jobs:
 
       - name: Configure MinIO client
         run: |
-          mc alias set myminio $MINIO_URL $ACCESS_KEY $SECRET_KEY
+          $HOME/minio-binaries/mc alias set myminio $MINIO_URL $ACCESS_KEY $SECRET_KEY
 
       - name: Download file from MinIO
         run: |
-          mc cp myminio/$BUCKET_NAME/$FILE_PATH $LOCAL_PATH
+          $HOME/minio-binaries/mc cp myminio/$BUCKET_NAME/$FILE_PATH $LOCAL_PATH
 
       - name: Check MD5 hash
         run: |
